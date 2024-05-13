@@ -59,8 +59,9 @@ class MainActivity : ComponentActivity() {
         tvInput = findViewById<TextView>(R.id.textview_input)
 
         // Initialize the LaunchDarkly Client
+        val ldMobileKey = getString(R.string.ld_mobile_key)
         val ldConfig: LDConfig = LDConfig.Builder(LDConfig.Builder.AutoEnvAttributes.Enabled)
-            .mobileKey("mob-e978a2b8-b8ea-49c5-b7f8-668a3339de7f")
+            .mobileKey(ldMobileKey) //"mob-e978a2b8-b8ea-49c5-b7f8-668a3339de7f")
             .build()
         val context = LDContext.builder("018f363f-b97b-7d74-96d5-be7594b7f74d")
             .kind("device")
